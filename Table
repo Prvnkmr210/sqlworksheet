@@ -1,0 +1,30 @@
+CREATE TABLE Persons (
+    PersonID int NOT NULL,
+    LastName varchar(255),
+    FirstName varchar(255),
+    City varchar(255) 
+); /* created table in MySchema */
+
+INSERT INTO Persons (PersonID, LastName, FirstName) Values (100,'Kumar','Naveen');
+INSERT INTO Persons VALUES (102,'Kumar','Praveen','Bangalore');
+INSERT INTO Persons VALUES (103,'Kumar','Raveen','Bangalore');
+INSERT INTO Persons VALUES (104,'Hussey','Mike','Sydeny');
+INSERT INTO Persons VALUES (101,'Clark','Michael','Sydeny');
+INSERT INTO Persons VALUES (105,'Ponting','Ricky','Melbourne');
+
+select * from Persons;
+
+UPDATE Persons SET firstname = 'Alfred Schmidt', lastname= 'Frankfurt' WHERE personid = 103;
+
+Alter table Persons add zip varchar(25); /* added column */
+
+Alter table Persons drop column zip; /* dropped column */
+
+describe persons;
+
+Alter table Persons modify LastName nchar(255);
+
+describe persons;
+
+
+
