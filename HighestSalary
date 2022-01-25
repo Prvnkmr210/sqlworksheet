@@ -1,0 +1,15 @@
+select ename, sal from scott.emp order by sal DESC;
+
+/* Find the third highest salary */
+
+select max(sal) from scott.emp; /* 5000 */
+
+select max(sal) from scott.emp where sal < (select max(sal) from scott.emp); /* 3000 */
+
+select max(sal) from scott.emp where sal < (select max(sal) from scott.emp where sal < (select max(sal) from scott.emp)); /* 2975; Example of query within query; not feasible solution */
+
+select ename, sal from scott.emp order by sal DESC fetch next 5 rows only;
+
+select * from (select ename, sal from scott.emp order by sal DESC) where rownum <= 3; /* rownum = 3; is not working */
+
+select ename, sal from scott.emp order by sal DESC offset 2 rows fetch next 1 rows only; /* optimum solution */
