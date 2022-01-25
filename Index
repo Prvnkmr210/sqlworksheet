@@ -1,1 +1,3 @@
-create index Id_Index on Persons(PersonId, firstname);
+CREATE INDEX Id_Index ON Persons(PersonId, firstname);
+
+DROP INDEX Id_Index ; /* No table name is required in the query */
