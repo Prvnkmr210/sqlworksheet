@@ -13,3 +13,11 @@ select ename, sal from scott.emp order by sal DESC fetch next 5 rows only;
 select * from (select ename, sal from scott.emp order by sal DESC) where rownum <= 3; /* rownum = 3; is not working */
 
 select ename, sal from scott.emp order by sal DESC offset 2 rows fetch next 1 rows only; /* optimum solution */
+
+
+Select name whose salary is highest in their department
+
+select ename from SCOTT.EMP
+where (deptno, sal) in 
+(select deptno, max(sal) from SCOTT.EMP
+group by deptno);
