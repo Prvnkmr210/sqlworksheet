@@ -1,0 +1,14 @@
+create table exchange (
+    FromCurr varchar(255),
+    ToCurr varchar(255), 
+    Rate int
+);
+
+Insert into exchange values ('usd', 'inr', 70);
+Insert into exchange values ('usd', 'gbp', 1.5);
+
+select * from exchange;
+
+select e1.rate/e2.rate from exchange e1
+join exchange e2 
+on e1.fromcurr = e2.fromcurr;
