@@ -1,0 +1,13 @@
+// operate only on the common column
+
+select deptno from scott.dept
+union
+select deptno from scott.emp;
+
+select deptno from scott.dept
+union all
+select deptno from scott.emp;
+
+select deptno from scott.dept
+minus
+select deptno from scott.emp;
