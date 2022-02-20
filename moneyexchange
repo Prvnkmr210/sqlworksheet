@@ -12,3 +12,8 @@ select * from exchange;
 select e1.rate/e2.rate from exchange e1
 join exchange e2 
 on e1.fromcurr = e2.fromcurr;
+
+
+select e2.tocurr, e1.tocurr, e1.rate/e2.rate
+from exchange e1 JOIN exchange e2 
+on e1.fromcurr='usd' and e1.tocurr='inr' and e2.tocurr='gbp';
